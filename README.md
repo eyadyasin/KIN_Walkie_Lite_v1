@@ -1,0 +1,1 @@
+KIN_Walkie_Lite_v1.0
