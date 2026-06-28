@@ -22,7 +22,7 @@ KIN Walkie Lite is a simple walkie-talkie style voice app for direct contacts an
 
 ## Download
 
-Download the latest APK from the **Releases** section:
+➡️ **[Download KIN Walkie Lite v1.0 APK](../../releases/latest/download/KIN_Walkie_Lite_v1.0.apk)**:
 
 **KIN Walkie Lite v1.0**
 
