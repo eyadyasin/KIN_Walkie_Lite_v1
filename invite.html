@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KIN Walkie Lite Invite</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 24px; background: #0f172a; color: #f8fafc; }
+    .card { max-width: 520px; margin: 40px auto; background: #111827; border: 1px solid #334155; border-radius: 18px; padding: 24px; }
+    h1 { margin-top: 0; font-size: 24px; }
+    p { line-height: 1.5; color: #cbd5e1; }
+    a.button { display: block; text-align: center; margin-top: 14px; padding: 14px 16px; border-radius: 12px; background: #38bdf8; color: #082f49; font-weight: bold; text-decoration: none; }
+    .secondary { background: #1f2937 !important; color: #e5e7eb !important; border: 1px solid #475569; }
+    code { word-break: break-all; color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>KIN Walkie Lite Invite</h1>
+    <p>Opening KIN Walkie Lite...</p>
+    <p>If the app does not open, install or update it, then open this invite again.</p>
+    <p>Invite token:<br><code id="tokenText">loading...</code></p>
+    <a id="openApp" class="button" href="#">Open KIN</a>
+    <a id="downloadApk" class="button secondary" href="https://github.com/eyadyasin/KIN_Walkie_Lite_v1/releases/latest/download/KIN_Walkie_Lite_v1.0.apk">Download / Update APK</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token') || '';
+    const deepLink = token ? `kinwalkie://invite?token=${encodeURIComponent(token)}` : 'kinwalkie://invite';
+    const apkLink = 'https://github.com/eyadyasin/KIN_Walkie_Lite_v1/releases/latest/download/KIN_Walkie_Lite_v1.0.apk';
+
+    document.getElementById('tokenText').textContent = token || 'missing token';
+    document.getElementById('openApp').href = deepLink;
+
+    // Try opening the installed Android app first.
+    // If nothing handles the custom scheme, keep the page visible with download button.
+    setTimeout(() => {
+      window.location.href = deepLink;
+    }, 350);
+
+    // Soft fallback: after a short wait, show/keep download path.
+    // We do not force download immediately, so users with the app can return smoothly.
+    setTimeout(() => {
+      document.getElementById('downloadApk').href = apkLink;
+    }, 1500);
+  </script>
+</body>
+</html>
