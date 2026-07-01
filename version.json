@@ -1,8 +1,8 @@
 {
-  "latest_version": "1.0.63",
-  "latest_build": 63,
+  "latest_version": "1.0.64",
+  "latest_build": 64,
   "force_update": false,
-  "apk_url": "https://github.com/eyadyasin/KIN_Walkie_Lite_v1/releases/latest",
+  "apk_url": "رابط نسخة 1.0.64",
   "title": "KIN Walkie Lite Update",
-  "message": "Update engine infrastructure test."
+  "message": "New update is available."
 }
